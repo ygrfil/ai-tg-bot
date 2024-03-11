@@ -14,20 +14,14 @@ Required Python packages: telebot, python-dotenv
 Telegram bot token obtained from BotFather
 API keys for the desired AI models (OpenAI, Anthropic, Perplexity)
 Setup
+
 Clone the repository:
-
-
-Copy code
 git clone https://github.com/your-username/ai-coding-assistant-bot.git
+
 Install the required Python packages:
-
-
-Copy code
 pip install -r requirements.txt
+
 Create a .env file in the project directory and provide the necessary environment variables:
-
-
-Copy code
 TELEGRAM_BOT_TOKEN=your_telegram_bot_token
 PERPLEXITY_API_KEY=your_perplexity_api_key
 ALLOWED_USER_IDS=user_id1,user_id2
@@ -38,10 +32,8 @@ Replace the placeholders with your actual values.
 
 Usage
 Run the bot:
-
-
-Copy code
 python main.py
+
 Start a conversation with the bot on Telegram.
 
 Use the following commands to interact with the bot:
