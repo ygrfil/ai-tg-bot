@@ -68,3 +68,52 @@ Send your coding queries or prompts, and the bot will generate insightful respon
 - **Initial Message**: Modify the `SYSTEM_MESSAGE` environment variable in your `.env` file to change the bot's initial greeting.
 - **History Limit**: Adjust the conversation history limit by editing `conversation_history[-10:]` in the code.
 - **Response Logic**: Tailor the `generate_*_response` functions to fine-tune response generation as per your requirements.
+
+# Quick Start Guide to Deploy AI Coding Assistant Bot with Docker Compose
+
+Quickly deploy your AI Coding Assistant Bot using Docker Compose, utilizing the latest features for an efficient and straightforward setup process.
+
+## Prerequisites
+
+- Ensure you have the latest versions of **Docker** and **Docker Compose** installed on your system. You can download and install these from the [official Docker website](https://docs.docker.com/get-docker/).
+
+## Steps
+
+### 1. Prepare Your Docker Compose File
+
+use `docker-compose.yml` . This file defines your bot service and sets it up to run in a Docker container:
+
+
+
+### 2. Deploy with Docker Compose
+
+With the `docker-compose.yml` ready, open a terminal/command prompt, and navigate to your project directory. Deploy your bot by executing:
+
+```bash
+docker compose up -d
+```
+
+Notice the use of `docker compose` (without the hyphen) reflecting recent syntax updates in newer Docker versions.
+
+### 3. Verify the Deployment
+
+To check the status of your bot and ensure it's running as expected, view the logs by running:
+
+```bash
+docker compose logs
+```
+
+This command shows the output from your bot, including any startup messages or errors.
+
+## Stopping the Bot
+
+When you need to stop the bot, use the following command in the same directory as your `docker-compose.yml`:
+
+```bash
+docker compose down
+```
+
+This will stop and remove the containers created for your bot.
+
+---
+
