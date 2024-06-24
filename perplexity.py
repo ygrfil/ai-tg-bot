@@ -8,7 +8,7 @@ def generate_perplexity_response(PERPLEXITY_API_KEY, user_message, placeholder_m
 
     client = OpenAI(api_key=PERPLEXITY_API_KEY, base_url="https://api.perplexity.ai")
     response_stream = client.chat.completions.create(
-        model="sonar-medium-online",
+        model="llama-3-sonar-large-32k-online",
         messages=messages,
         stream=True,
     )

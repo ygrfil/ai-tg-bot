@@ -3,3 +3,5 @@ requests
 anthropic
 openai
 telebot
+groq
+cryptography

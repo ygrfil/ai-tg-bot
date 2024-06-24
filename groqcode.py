@@ -1,27 +1,17 @@
-from openai import OpenAI
+from groq import Groq
 
-def generate_openai_response(api_key, system_message, conversation_history, placeholder_message, bot, image_url=None):
-    client = OpenAI(api_key=api_key)
+def generate_groq_response(api_key, system_message, conversation_history, placeholder_message, bot):
+    client = Groq(api_key=api_key)
 
     messages = [{"role": "system", "content": system_message}]
     
     for msg in conversation_history:
-        if isinstance(msg['content'], list):  # Image message
-            messages.append(msg)
-        else:  # Text message
-            messages.append({"role": msg["role"], "content": msg["content"]})
-
-    if image_url:
-        messages.append({
-            "role": "user",
-            "content": [
-   #             {"type": "text", "text": "What's in this image?"},
-                {"type": "image_url", "image_url": {"url": image_url}},
-            ],
-        })
+        if isinstance(msg['content'], list):  # Skip image messages as Groq doesn't support them
+            continue
+        messages.append({"role": msg["role"], "content": msg["content"]})
 
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="llama3-70b-8192",  # You can change this to the appropriate Groq model
         messages=messages,
         max_tokens=1024,
         n=1,
