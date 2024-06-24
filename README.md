@@ -41,8 +41,15 @@ This Telegram bot leverages multiple AI models to provide various functionalitie
    GROQ_API_KEY=your_groq_api_key
    ```
 4. Run the bot: `python main.py`
-or
-Create .env file and use "docker compose up" to start it with dockers.
+
+### Docker Deployment
+
+This project includes a `docker-compose.yml` file for easy deployment using Docker.
+
+1. Make sure you have Docker and Docker Compose installed on your system.
+2. Create a `.env` file with the necessary environment variables (as listed above).
+3. Build and start the Docker container:
+docker compose up
 ## Dependencies
 
 - python-telegram-bot
